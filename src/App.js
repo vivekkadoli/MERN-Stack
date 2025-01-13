@@ -4,9 +4,14 @@ import CourseList from "./components/CourseList";
 
 import './App.css';
 const App = () => {
+  const courseGoals = [
+    {id: 'cg1', text: 'Nodejs & ReactJS'},
+    {id: 'cg2', text: 'Git'},
+    {id: 'cg3', text: 'ExpressJs & MongoDB'}
+  ];
   return <div className="course-goals">
     <h2>MERN Stack Course</h2>
-    <CourseList/>
+    <CourseList goals={courseGoals}/>
   </div>
   //<h1> Welcome to ReactJS with <span>Git and Nodejs</span></h1>;
 };
