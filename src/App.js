@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 const App = () => {
-  return <div>
+  return <div className="course-goals">
     <h2>MERN Stack Course</h2>
     <ul className="course-list">
       <li>Nodejs &amp; ReactJS</li>
