@@ -1,5 +1,7 @@
 import React from "react";
 
+import './CourseList.css';
+
 const CourseList = () => {
     return (
         <ul className="course-list">
