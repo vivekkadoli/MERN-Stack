@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import CourseList from "./components/Goal/CourseList";
 
@@ -6,15 +6,15 @@ import NewGoal from "./components/NewGoal/NewGoal";
 
 import './App.css';
 const App = () => {
-  const courseGoals = [
+  const [courseGoals, setCourseGoals] = useState([
     {id: 'cg1', text: 'Nodejs & ReactJS'},
     {id: 'cg2', text: 'Git'},
     {id: 'cg3', text: 'ExpressJs & MongoDB'}
-  ];
+  ]);
 
   const addNewGoalHandler = (newGoal) => {
-    courseGoals.push(newGoal);
-    console.log(courseGoals);
+    //setCourseGoals(courseGoals.concat(newGoal));
+    setCourseGoals((prevCourseGoals) => prevCourseGoals.concat(newGoal));
   };
 
   return (
