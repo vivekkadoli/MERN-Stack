@@ -1,6 +1,8 @@
 import React from "react";
 
-import CourseList from "./components/Course/CourseList";
+import CourseList from "./components/Goal/CourseList";
+
+import NewGoal from "./components/NewGoal/NewGoal";
 
 import './App.css';
 const App = () => {
@@ -11,6 +13,7 @@ const App = () => {
   ];
   return <div className="course-goals">
     <h2>MERN Stack Course</h2>
+    <NewGoal/>
     <CourseList goals={courseGoals}/>
   </div>
   //<h1> Welcome to ReactJS with <span>Git and Nodejs</span></h1>;
