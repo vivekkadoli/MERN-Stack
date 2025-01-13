@@ -1,16 +1,4 @@
 .course-goals h2 {
     text-align: center;
-    
-}
 
-.course-list {
-    list-style: none;
-    margin: 2rem;
-    padding: 0;
-}
-
-.course-list li {
-    margin: 1rem 0;
-    border: 1px solid #ccc;
-    padding: 1rem;
 }
