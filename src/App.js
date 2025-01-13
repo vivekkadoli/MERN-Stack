@@ -3,7 +3,7 @@ import './App.css';
 const App = () => {
   return <div>
     <h2>Nodejs</h2>
-    <ul>
+    <ul className="course-list">
       <li>ReactJS</li>
       <li>Git</li>
       <li>ExpressJs &amp; MongoDB (MERN Stack)</li>
