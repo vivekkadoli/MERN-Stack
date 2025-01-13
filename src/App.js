@@ -11,11 +11,19 @@ const App = () => {
     {id: 'cg2', text: 'Git'},
     {id: 'cg3', text: 'ExpressJs & MongoDB'}
   ];
-  return <div className="course-goals">
-    <h2>MERN Stack Course</h2>
-    <NewGoal/>
-    <CourseList goals={courseGoals}/>
-  </div>
+
+  const addNewGoalHandler = (newGoal) => {
+    courseGoals.push(newGoal);
+    console.log(courseGoals);
+  };
+
+  return (
+    <div className="course-goals">
+      <h2>MERN Stack Course</h2>
+      <NewGoal onAddGoal={addNewGoalHandler} />
+      <CourseList goals={courseGoals} />
+    </div>
+  );
   //<h1> Welcome to ReactJS with <span>Git and Nodejs</span></h1>;
 };
 
