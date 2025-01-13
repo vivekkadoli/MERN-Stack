@@ -1,6 +1,6 @@
 import React from "react";
 
-import CourseList from "./components/CourseList";
+import CourseList from "./components/Course/CourseList";
 
 import './App.css';
 const App = () => {
