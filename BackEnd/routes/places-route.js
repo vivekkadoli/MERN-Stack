@@ -2,9 +2,28 @@ const express = require("express");
 
 const router = express.Router();
 
-router.get("/", (req, res, next) => {
-  console.log("GET request in places route");
-  res.json({ message: "It works!" });
+const DUMMY_PlACES = [
+  {
+    id: "p1",
+    title: "Dagdusheth Temple",
+    description:
+      "Hindu temple popular with pilgrims, with marble interiors & a golden Ganesh idol.",
+    location: {
+      lat: 18.5164297,
+      lng: 73.853558,
+    },
+    address:
+      "Ganpati Bhavan, 250, Chhatrapati Shivaji Maharaj Rd, Mehunpura, Budhwar Peth, Pune, Maharashtra 411002",
+    creator: "u1",
+  },
+];
+
+router.get("/:pid", (req, res, next) => {
+  const placeId = req.params.pid; // { pid: 'p1' }
+  const place = DUMMY_PlACES.find((p) => {
+    return p.id === placeId;
+  });
+  res.json({ place }); // { place } => { place: place }
 });
 
 module.exports = router;
