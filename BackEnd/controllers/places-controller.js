@@ -79,6 +79,29 @@ const createPlace = (req, res, next) => {
   res.status(201).json({ place: createdPlace }); // 201 is the status code for "resource created"
 };
 
+const updatePlace = (req, res, next) => {
+  const { title, description } = req.body;
+  const placeId = req.params.pid;
+
+  const updatedPlace = { ...DUMMY_PlACES.find((p) => p.id === placeId) };
+  const placeIndex = DUMMY_PlACES.findIndex((p) => p.id === placeId);
+
+  updatedPlace.title = title;
+  updatedPlace.description = description;
+
+  DUMMY_PlACES[placeIndex] = updatedPlace;
+
+  res.status(200).json({ place: updatedPlace });
+};
+
+// const deletePlace = (req, res, next) => {
+//   const placeId = req.params.pid;
+//   DUMMY_PlACES = DUMMY_PlACES.filter((p) => p.id !== placeId);
+//   res.status(200).json({ message: "Deleted place." });
+// };
+
 exports.getPlaceByID = getPlaceByID;
 exports.getPlaceByUserId = getPlaceByUserId;
 exports.createPlace = createPlace;
+exports.updatePlace = updatePlace;
+exports.deletePlace = deletePlace;
