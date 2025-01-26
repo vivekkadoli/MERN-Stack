@@ -18,7 +18,6 @@ const createProduct = async (req, res, next) => {
     price: req.body.price,
   });
   const result = await createdProduct.save();
-
   res.json(result);
 };
 
