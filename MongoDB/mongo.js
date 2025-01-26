@@ -14,7 +14,7 @@ const createProduct = async (req, res, next) => {
     await client.connect();
     const db = client.db();
     const result = await db.collection("products").insertOne(newProduct);
-    newProduct.id = result.insertedId;
+    // newProduct.id = result.insertedId;
   } catch (error) {
     return res.status(500).json({ message: "Could not store data." });
   } finally {
