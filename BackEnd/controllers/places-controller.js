@@ -6,36 +6,8 @@ const getCoordsForAddress = require("../util/location");
 const Place = require("../models/place");
 const User = require("../models/user");
 
-let DUMMY_PlACES = [
-  {
-    id: "p1",
-    title: "Dagdusheth Temple",
-    description:
-      "Hindu temple popular with pilgrims, with marble interiors & a golden Ganesh idol.",
-    location: {
-      lat: 18.5164297,
-      lng: 73.853558,
-    },
-    address:
-      "Ganpati Bhavan, 250, Chhatrapati Shivaji Maharaj Rd, Mehunpura, Budhwar Peth, Pune, Maharashtra 411002",
-    creator: "u1",
-  },
-  {
-    id: "p2",
-    title: "Gateway of India",
-    description:
-      "The Gateway of India is a 26-meter (85-foot) arch monument in Mumbai, India that's a top tourist attraction and symbol of the city's history and independence",
-    address: "Apollo Bandar, Colaba, Mumbai, Maharashtra 400001",
-    coordinates: {
-      lat: 18.9219841,
-      lng: 72.8320794,
-    },
-    creator: "u2",
-  },
-];
-
 const getPlaceByID = async (req, res, next) => {
-  const placeId = req.params.pid; // { pid: 'p1' }
+  const placeId = req.params.pid;
 
   let place;
   try {
@@ -56,7 +28,7 @@ const getPlaceByID = async (req, res, next) => {
     return next(error);
   }
 
-  res.json({ place: place.toObject({ getters: true }) }); // { place } => { place: place }
+  res.json({ place: place.toObject({ getters: true }) });
 };
 
 const getPlacesByUserId = async (req, res, next) => {
@@ -116,7 +88,7 @@ const createPlace = async (req, res, next) => {
 
   let user;
   try {
-    user = await User.findById(creator); // Fetch the user by creator id
+    user = await User.findById(creator);
   } catch (err) {
     const error = new HttpError("Fetching user failed, please try again", 500);
     return next(error);
@@ -146,7 +118,7 @@ const createPlace = async (req, res, next) => {
     return next(error);
   }
 
-  res.status(201).json({ place: createdPlace }); // 201 is the status code for "resource created"
+  res.status(201).json({ place: createdPlace });
 };
 
 const updatePlace = async (req, res, next) => {
