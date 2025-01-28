@@ -59,7 +59,7 @@ const Auth = () => {
     if (isLoginMode) {
     } else {
       try {
-        const response = await fetch("http://localhost:5000/api/user/signup", {
+        const response = await fetch("http://localhost:5000/api/users/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
