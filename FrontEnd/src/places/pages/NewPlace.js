@@ -15,7 +15,7 @@ import "./PlaceForm.css";
 
 const NewPlace = () => {
   const auth = useContext(AuthContext);
-  const { isLoading, error, sedRequest, clearError } = useHttpClient();
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const [formState, inputHandler] = useForm(
     {
       title: { value: "", isValid: false },
@@ -28,13 +28,13 @@ const NewPlace = () => {
   const placeSubmitHandler = async (event) => {
     event.preventDefault();
     try {
-      await sedRequest(
+      await sendRequest(
         "http://localhost:5000/api/places",
         "POST",
         JSON.stringify({
           title: formState.inputs.title.value,
           description: formState.inputs.description.value,
-          address: formState.inputs.description.value,
+          address: formState.inputs.address.value,
           creator: auth.userId,
         }),
         { "Context-Type": "application/json" }
