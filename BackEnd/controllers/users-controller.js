@@ -48,9 +48,7 @@ const signup = async (req, res, next) => {
   const createdUser = new User({
     name,
     email,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSHQujztb-O86piW_-DaD8n4HUMyI2ZH5tcLSFZoqWzM5REv6Z_DJteZNG5Oibcrfbutg&usqp=CAU",
-    // https://live.staticflicker.com/7631/26849088292_36fc52ee90_b.jpg
+    image: req.file.path,
     password,
     places: [],
   });
