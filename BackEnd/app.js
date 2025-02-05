@@ -1,5 +1,5 @@
 const fs = require("fs");
-// const path = require("path");
+const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -13,9 +13,9 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(
-  "/BackEnd/uploads/images",
+  "/uploads/images",
   // express.static(path.join("BackEnd", "uploads", "images"))
-  express.static(__dirname + "/BackEnd/uploads/images")
+  express.static(path.join(__dirname + "/uploads/images"))
 );
 
 app.use((req, res, next) => {
