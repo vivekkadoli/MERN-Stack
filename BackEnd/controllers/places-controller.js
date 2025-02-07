@@ -184,6 +184,14 @@ const deletePlace = async (req, res, next) => {
     return next(error);
   }
 
+  if (place.creator.id !== req.userData.userId) {
+    const error = new HttpError(
+      "You are not allowed to delete this place",
+      401
+    );
+    return next(error);
+  }
+
   if (!place.creator) {
     return next(new HttpError("Place does not have a valid creator.", 500));
   }
