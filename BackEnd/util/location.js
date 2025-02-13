@@ -3,7 +3,7 @@ const HttpError = require("../models/http-error");
 
 //"AIzaSyCpSrG89YD4-rU01zT7ScDt1YvRZYMmsts"
 //process.env.GOOGLE_API_KEY
-const API_KEY = "AIzaSyCpSrG89YD4-rU01zT7ScDt1YvRZYMmsts";
+const API_KEY = process.env.GOOGLE_API_KEY;
 
 async function getCoordsForAddress(address) {
   //   return { lat: 18.5164297, lng: 73.853558 };
