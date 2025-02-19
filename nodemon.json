@@ -2,7 +2,7 @@
     "env": {
         "DB_USER": "MERNProject",
         "DB_PASSWORD": "WuK4wEYFewiP7EdM",
-        "DB_NAME": "mern",
+        "DB_NAME": "mern-prod",
         "GOOGLE_API_KEY": "AIzaSyCa3TDkoixCbsQR9zzhhY-MTe03Vljfb3c",
         "JWT_KEY": "supersecret_dont_share"
     }
