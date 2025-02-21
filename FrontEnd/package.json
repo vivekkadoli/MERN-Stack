@@ -4,12 +4,13 @@
   "private": true,
   "dependencies": {
     "nth-check": "^2.1.1",
-    "postcss": "^8.5.1",
+    "postcss": "^8.5.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "5.3.4",
     "react-scripts": "^5.0.1",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "serialize-javascript": "^6.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
