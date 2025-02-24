@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "cross-spawn": "^7.0.6",
     "loader-utils": "^3.3.1",
     "nth-check": "^2.1.1",
     "postcss": "^8.5.3",
